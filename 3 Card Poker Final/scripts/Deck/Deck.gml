@@ -62,7 +62,7 @@ function Deck() constructor {
 	
 	/// @func isEmpty()
 	/// @desc Returns if the deck is currently empty.
-	/// @return {boolean} True if empty, false otherwise
+	/// @return {Bool} True if empty, false otherwise
 	function isEmpty() {
 		return cardsLeft() == 0;
 	}//end isEmpty

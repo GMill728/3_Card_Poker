@@ -63,7 +63,7 @@ function Hand() constructor {
 	/// @func getCardPos(c)
 	/// @desc Returns the position of the specified Card in the hand and -1 if Card not found.
 	/// @param {Struct.Card} C The Card to be searched for.
-	/// @return {int} The position of the Card in the hand. -1 if Card not found.
+	/// @return {Real} The position of the Card in the hand. -1 if Card not found.
 	function getCardPos(c) {
         return array_get_index(hand, c);
     }//end getIndex
