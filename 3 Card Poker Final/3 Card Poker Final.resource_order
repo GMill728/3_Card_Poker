@@ -3,7 +3,6 @@
     {"name":"Animation Curves","order":12,"path":"folders/Animation Curves.yy",},
     {"name":"Extensions","order":14,"path":"folders/Extensions.yy",},
     {"name":"Fonts","order":7,"path":"folders/Fonts.yy",},
-    {"name":"Sprites","order":16,"path":"folders/Sprites.yy",},
     {"name":"Notes","order":13,"path":"folders/Notes.yy",},
     {"name":"Objects","order":9,"path":"folders/Objects.yy",},
     {"name":"Particle Systems","order":15,"path":"folders/Particle Systems.yy",},
@@ -13,11 +12,14 @@
     {"name":"Sequences","order":11,"path":"folders/Sequences.yy",},
     {"name":"Shaders","order":6,"path":"folders/Shaders.yy",},
     {"name":"Sounds","order":3,"path":"folders/Sounds.yy",},
+    {"name":"Sprites","order":16,"path":"folders/Sprites.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"Game","order":1,"path":"rooms/Game/Game.yy",},
     {"name":"Deck","order":2,"path":"scripts/Deck/Deck.yy",},
     {"name":"Hand","order":1,"path":"scripts/Hand/Hand.yy",},
+    {"name":"sprBackground","order":1,"path":"sprites/sprBackground/sprBackground.yy",},
   ],
 }
