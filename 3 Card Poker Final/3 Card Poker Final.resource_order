@@ -22,5 +22,7 @@
     {"name":"Hand","order":1,"path":"scripts/Hand/Hand.yy",},
     {"name":"InfoBox","order":4,"path":"scripts/InfoBox/InfoBox.yy",},
     {"name":"SubmitBox","order":5,"path":"scripts/SubmitBox/SubmitBox.yy",},
+    {"name":"sprAnte","order":1,"path":"sprites/sprAnte/sprAnte.yy",},
+    {"name":"sprPair","order":2,"path":"sprites/sprPair/sprPair.yy",},
   ],
 }
