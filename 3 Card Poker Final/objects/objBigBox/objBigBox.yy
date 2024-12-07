@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"objPlayerMoney",
+  "%Name":"objBigBox",
   "eventList":[],
   "managed":true,
-  "name":"objPlayerMoney",
+  "name":"objBigBox",
   "overriddenProperties":[],
   "parent":{
     "name":"Text Boxes",
@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprPlayerMoney",
-    "path":"sprites/sprPlayerMoney/sprPlayerMoney.yy",
+    "name":"sprBigTextBox",
+    "path":"sprites/sprBigTextBox/sprBigTextBox.yy",
   },
   "spriteMaskId":null,
   "visible":true,

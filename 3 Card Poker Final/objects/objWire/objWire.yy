@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"objPlayerMoney",
+  "%Name":"objWire",
   "eventList":[],
   "managed":true,
-  "name":"objPlayerMoney",
+  "name":"objWire",
   "overriddenProperties":[],
   "parent":{
-    "name":"Text Boxes",
-    "path":"folders/Objects/Text Boxes.yy",
+    "name":"Buttons",
+    "path":"folders/Objects/Buttons.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprPlayerMoney",
-    "path":"sprites/sprPlayerMoney/sprPlayerMoney.yy",
+    "name":"sprWire",
+    "path":"sprites/sprWire/sprWire.yy",
   },
   "spriteMaskId":null,
   "visible":true,

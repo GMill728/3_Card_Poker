@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprTextBox",
-    "path":"sprites/sprTextBox/sprTextBox.yy",
+    "name":"sprSmallTextBox",
+    "path":"sprites/sprSmallTextBox/sprSmallTextBox.yy",
   },
   "spriteMaskId":null,
   "visible":true,
