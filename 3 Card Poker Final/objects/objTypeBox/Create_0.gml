@@ -1,9 +1,9 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Creates typeable text box
+//by William Grant 12/7/2024
 
-image_speed = 0;   //Set to static image
-image_index = 0;   //Set sprite to normal state
-text = "0";         //Text contained in Input Box
-deleteTimer = 2;   //Delete Timer for delaying operations
-enabled = true;    //Indicates if InputBox is visible and usable
-focused = false;   //Indicates if user is currently using the InputBox
+image_speed = 0;	//Static image
+image_index = 0;	//First index (unpressed)
+text = "0";			//Default amount (0)
+deleteTimer = 2;	//For backspace
+enabled = true;		//Enabled at start by default
+focused = false;	//For switching clicked and non-clicked

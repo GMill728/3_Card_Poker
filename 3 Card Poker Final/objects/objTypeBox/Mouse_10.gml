@@ -1,6 +1,6 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description If hovering
+//by William Grant 12/7/2024
 
 if (!focused) {
-	image_index = 1; //Switch to highlighted state
-}//end if
+	image_index = 1; //Highlighted
+}

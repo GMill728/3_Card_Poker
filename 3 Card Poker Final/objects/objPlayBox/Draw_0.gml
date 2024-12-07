@@ -7,4 +7,4 @@ draw_set_font(fntButton);
 draw_set_valign(fa_middle);
 draw_set_halign(fa_left);
 
-draw_text(x, y, text);		//Text box origin is pre-centered so should be centered text.
+draw_text(x, y, objAnteBox.text);

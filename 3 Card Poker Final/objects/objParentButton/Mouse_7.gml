@@ -1,4 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Hovering state after release
+//by William Grant 12/7/2024
 
 image_index = 1;

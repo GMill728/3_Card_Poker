@@ -1,7 +1,7 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Make button
+//by William Grant 12/7/2024
 
-image_speed = 0; //Set static image
-image_index = 0; //Set to first frame in sprite
-text = "";       //Text to be displayed on button
-enabled = true;  //Indicates if visible and clickable 
+image_speed = 0; //Static
+image_index = 0; //Unpressed
+text = "";       //If text needed
+enabled = true;  //Enabled by default

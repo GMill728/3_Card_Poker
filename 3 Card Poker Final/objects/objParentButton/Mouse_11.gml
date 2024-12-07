@@ -1,4 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Unhovered
+//by William Grant 12/7/2024
 
 image_index = 0;

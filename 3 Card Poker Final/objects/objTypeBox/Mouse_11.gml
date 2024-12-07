@@ -1,6 +1,6 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description If unhovering
+//by William Grant 12/7/2024
 
 if( !focused ) {
-	image_index = 0; //Return to default state
-}//end if
+	image_index = 0; //Unhighlighted
+}
