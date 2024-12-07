@@ -213,4 +213,101 @@ function Hand() constructor {
 
         return string_trim(result);
     }//end toString
+	
+	/// @function isStraight()
+	/// @desc Checks if hand is a straight
+	/// @return {boolen} True if the hand is straight, else false. 
+	function isStraight()
+	{
+		sortByRank(); 
+		var rank1 = hand[0].getRank();
+		var rank2 = hand[1].getRank(); 
+		var rank3 = hand[2].getRank(); 
+		
+		//sequential order check
+		if (rank2 == rank1 + 1 && rank3 == rank2 +1)
+		{
+			return true; 	
+		}
+		
+		if (rank1 == RANK.TWO && rank2 == RANK.THREE && rank3 == RANK.ACE)
+		{
+			return true; 	
+		}
+		
+		return false; 
+	}
+	
+	/// @func isFlush()
+	/// @desc Checks if the hand is a Flush.
+	/// @return {boolean} if hand is a Flush true, else false. 
+	function isFlush()
+	{
+		var suit1 = hand[0].getSuit(); 
+		var suit2 = hand[1].getSuit();
+		var suit3 = hand[2].getSuit();
+		
+		return (suit1 == suit2 && suit2 == suit3); 
+		
+	}	
+	
+	
+	/// @func isThreeOfAKind()
+	/// @desc Checks if the hand is Three of a Kind.
+	/// @return {boolean} if hand is a Three of a Kind true, else false. 
+	function isThreeOfAKind()
+	{
+		var rank1 = hand[0].getRank();
+		var rank2 = hand[1].getRank(); 
+		var rank3 = hand[2].getRank();	
+		
+		return (rank1 == rank2 && rank2 == rank3); 
+	}
+	
+	/// @func isPair()
+	/// @desc Checks if the hand is a Pair.
+	/// @return {boolean} if hand is a Pair True, else false. 
+	function isPair()
+	{
+		var rank1 = hand[0].getRank();
+		var rank2 = hand[1].getRank(); 
+		var rank3 = hand[2].getRank();	
+		
+		return (rank1 == rank2 || rank1 == rank3 || rank2 == rank3)
+	}
+	
+	/// @func getHandRank()
+	/// @desc Evaluates the rank of the hand and returns an enumerated type.
+	/// @return {enum.HAND_RANK} The rank of the hand (STRAIGHT_FLUSH, THREE_OF_A_KIND, etc..).
+	function getHandRank()
+	{
+		enum HAND_RANK {STRAIGHT_FLUSH, THREE_OF_A_KIND, STRAIGHT, FLUSH, PAIR, HIGH_CARD}; 
+		
+		if (isStraight() && isFlush())
+		{
+			return HAND_RANK.STRAIGHT_FLUSH; 	
+		}
+		if (isThreeOfAKind())
+		{
+			return HAND_RANK.THREE_OF_A_KIND; 	
+		}
+		if (isStraight())
+		{
+			return HAND_RANK.STRAIGHT; 	
+		}
+		if (isFlush())
+		{
+			return HAND_RANK.FLUSH; 	
+		}
+		if (isPair())
+		{
+			return HAND_RANK.PAIR; 	
+		}
+		
+		return HAND_RANK.HIGH_CARD; 
+	}
+	
+
+	
+	
 }//end hand
