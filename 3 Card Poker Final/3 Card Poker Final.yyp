@@ -36,6 +36,7 @@
   },
   "name":"3 Card Poker Final",
   "resources":[
+    {"id":{"name":"fntButton","path":"fonts/fntButton/fntButton.yy",},},
     {"id":{"name":"objAnte","path":"objects/objAnte/objAnte.yy",},},
     {"id":{"name":"objAnteBox","path":"objects/objAnteBox/objAnteBox.yy",},},
     {"id":{"name":"objCenterBox","path":"objects/objCenterBox/objCenterBox.yy",},},
@@ -49,6 +50,7 @@
     {"id":{"name":"objPlayBox","path":"objects/objPlayBox/objPlayBox.yy",},},
     {"id":{"name":"objPlayerMoney","path":"objects/objPlayerMoney/objPlayerMoney.yy",},},
     {"id":{"name":"objTextSubmit","path":"objects/objTextSubmit/objTextSubmit.yy",},},
+    {"id":{"name":"objTypeBox","path":"objects/objTypeBox/objTypeBox.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"Card","path":"scripts/Card/Card.yy",},},
     {"id":{"name":"Deck","path":"scripts/Deck/Deck.yy",},},

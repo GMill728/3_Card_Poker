@@ -5,6 +5,6 @@ draw_self();                 //Draw default sprite assigned to this object
 
 draw_set_font(fntButton); 
 draw_set_valign(fa_middle);
-draw_set_halign(fa_left);
+draw_set_halign(fa_center);
 
-draw_text(x + 3 * sprite_width / 8, y, text); //Draw text offset to right
+draw_text(x, y, text); //Draw text offset to right

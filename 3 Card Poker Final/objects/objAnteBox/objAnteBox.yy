@@ -9,7 +9,10 @@
     "name":"Text Boxes",
     "path":"folders/Objects/Text Boxes.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"objTypeBox",
+    "path":"objects/objTypeBox/objTypeBox.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

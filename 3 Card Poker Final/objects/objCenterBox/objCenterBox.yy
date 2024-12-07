@@ -8,8 +8,8 @@
   "name":"objCenterBox",
   "overriddenProperties":[],
   "parent":{
-    "name":"Text Boxes",
-    "path":"folders/Objects/Text Boxes.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,
