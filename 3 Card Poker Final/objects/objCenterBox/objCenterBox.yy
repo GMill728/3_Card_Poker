@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"objParentButton",
+  "%Name":"objCenterBox",
   "eventList":[],
   "managed":true,
-  "name":"objParentButton",
+  "name":"objCenterBox",
   "overriddenProperties":[],
   "parent":{
-    "name":"Buttons",
-    "path":"folders/Objects/Buttons.yy",
+    "name":"Text Boxes",
+    "path":"folders/Objects/Text Boxes.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -27,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sprTextBox",
+    "path":"sprites/sprTextBox/sprTextBox.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

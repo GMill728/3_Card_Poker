@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"objParentButton",
+  "%Name":"objContinue",
   "eventList":[],
   "managed":true,
-  "name":"objParentButton",
+  "name":"objContinue",
   "overriddenProperties":[],
   "parent":{
     "name":"Buttons",
@@ -27,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sprContinue",
+    "path":"sprites/sprContinue/sprContinue.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

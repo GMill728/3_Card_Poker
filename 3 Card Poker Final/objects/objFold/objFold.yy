@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"objParentButton",
+  "%Name":"objFold",
   "eventList":[],
   "managed":true,
-  "name":"objParentButton",
+  "name":"objFold",
   "overriddenProperties":[],
   "parent":{
     "name":"Buttons",
@@ -27,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"sprFold",
+    "path":"sprites/sprFold/sprFold.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

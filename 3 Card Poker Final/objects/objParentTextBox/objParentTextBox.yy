@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"objParentButton",
+  "%Name":"objParentTextBox",
   "eventList":[],
   "managed":true,
-  "name":"objParentButton",
+  "name":"objParentTextBox",
   "overriddenProperties":[],
   "parent":{
-    "name":"Buttons",
-    "path":"folders/Objects/Buttons.yy",
+    "name":"Text Boxes",
+    "path":"folders/Objects/Text Boxes.yy",
   },
   "parentObjectId":null,
   "persistent":false,
