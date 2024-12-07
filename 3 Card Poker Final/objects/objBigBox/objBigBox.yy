@@ -1,18 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"objAnteBox",
+  "%Name":"objBigBox",
   "eventList":[],
   "managed":true,
-  "name":"objAnteBox",
+  "name":"objBigBox",
   "overriddenProperties":[],
   "parent":{
     "name":"Text Boxes",
     "path":"folders/Objects/Text Boxes.yy",
   },
-  "parentObjectId":{
-    "name":"objTypeBox",
-    "path":"objects/objTypeBox/objTypeBox.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprSmallTextBox",
-    "path":"sprites/sprSmallTextBox/sprSmallTextBox.yy",
+    "name":"sprBigTextBox",
+    "path":"sprites/sprBigTextBox/sprBigTextBox.yy",
   },
   "spriteMaskId":null,
   "visible":true,

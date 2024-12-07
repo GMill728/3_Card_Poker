@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprTextBox",
-    "path":"sprites/sprTextBox/sprTextBox.yy",
+    "name":"sprPlayerMoney",
+    "path":"sprites/sprPlayerMoney/sprPlayerMoney.yy",
   },
   "spriteMaskId":null,
   "visible":true,
