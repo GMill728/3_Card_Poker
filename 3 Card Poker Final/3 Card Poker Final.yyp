@@ -34,6 +34,10 @@
   },
   "name":"3 Card Poker Final",
   "resources":[
+    {"id":{"name":"objAnte","path":"objects/objAnte/objAnte.yy",},},
+    {"id":{"name":"objPairPlus","path":"objects/objPairPlus/objPairPlus.yy",},},
+    {"id":{"name":"objParentButton","path":"objects/objParentButton/objParentButton.yy",},},
+    {"id":{"name":"objPlay","path":"objects/objPlay/objPlay.yy",},},
     {"id":{"name":"objTextSubmit","path":"objects/objTextSubmit/objTextSubmit.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"Card","path":"scripts/Card/Card.yy",},},
@@ -43,6 +47,7 @@
     {"id":{"name":"InfoBox","path":"scripts/InfoBox/InfoBox.yy",},},
     {"id":{"name":"SubmitBox","path":"scripts/SubmitBox/SubmitBox.yy",},},
     {"id":{"name":"sprAnte","path":"sprites/sprAnte/sprAnte.yy",},},
+    {"id":{"name":"sprBackground","path":"sprites/sprBackground/sprBackground.yy",},},
     {"id":{"name":"sprDeck","path":"sprites/sprDeck/sprDeck.yy",},},
     {"id":{"name":"sprPair","path":"sprites/sprPair/sprPair.yy",},},
   ],
