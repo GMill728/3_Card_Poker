@@ -57,9 +57,32 @@ function Game() constructor{
 		return playerMoney; 
 	}//end getPlayerMoney
 	
-	function setPlayerBet(amount) {
-		playerBet = amount;
-		playerMoney -= playerBet;
+	/// @func setPairPlusBet(amount)
+	/// @desc Sets the bet for pair plus and subtracts it from the player's money.
+	/// @param {Real} amount The amount to change the bet to and subtract from the money.
+	// William Grant 12/10/24
+	function setPairPlusBet(amount) {
+		pairPlusBet = amount;
+		playerMoney -= pairPlusBet;
+	}//end setPlayerBet
+	
+	/// @func setAnteBet(amount)
+	/// @desc Sets the bet for ante and subtracts it from the player's money.
+	/// @param {Real} amount The amount to change the bet to and subtract from the money.
+	// William Grant 12/10/24
+	function setAnteBet(amount) {
+		anteBet = amount;
+		playerMoney -= anteBet;
+	}//end setPlayerBet
+	
+	/// @func setPlayBet(amount)
+	/// @desc Sets the bet for play and subtracts it from the player's money.
+	/// @desc Could be done another way probably, but just done for readability.
+	/// @param {Real} amount The amount to change the bet to and subtract from the money.
+	// William Grant 12/10/24
+	function setPlayBet(amount) {
+		playBet = amount;
+		playerMoney -= playBet;
 	}//end setPlayerBet
 
 	function dealCards() 
@@ -75,11 +98,30 @@ function Game() constructor{
 		
 		for (var i = 0; i < 3; i++)
 		{
-			playerHand.addCard(deck.deal()); 
+			playerHand.addCard(deck.deal());
 			dealerHand.addCard(deck.deal()); 
 		}
+		playerCard1 = playerHand.getCard(0);
+		playerCard2 = playerHand.getCard(1);
+		playerCard3 = playerHand.getCard(2);
 		
+		objPlayerCard1.image_index = playerCard1.getRank() * 4 + playerCard1.getSuit() + 1;
+		objPlayerCard2.image_index = playerCard2.getRank() * 4 + playerCard2.getSuit() + 1;
+		objPlayerCard3.image_index = playerCard3.getRank() * 4 + playerCard3.getSuit() + 1;
 		
+		toggleBets(false);
+	}
+	
+	/// @func toggleBets(toggleState)
+	/// @desc Toggles all the bet buttons according to boolean
+	/// @param {Bool} toggleState true = enabled, false = disabled
+	// William Grant 12/10/24
+	function toggleBets(toggleState)
+	{
+		objAnteBox.enabled = toggleState;
+		objPairPlusBox.enabled = toggleState;
+		objPlayBox.enabled = toggleState;
+		objPlay.enabled = toggleState;
 	}
 }
 
