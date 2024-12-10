@@ -68,6 +68,7 @@
     {"id":{"name":"Game","path":"scripts/Game/Game.yy",},},
     {"id":{"name":"Hand","path":"scripts/Hand/Hand.yy",},},
     {"id":{"name":"InfoBox","path":"scripts/InfoBox/InfoBox.yy",},},
+    {"id":{"name":"PokerHand","path":"scripts/PokerHand/PokerHand.yy",},},
     {"id":{"name":"SubmitBox","path":"scripts/SubmitBox/SubmitBox.yy",},},
     {"id":{"name":"TestHand","path":"scripts/TestHand/TestHand.yy",},},
     {"id":{"name":"cursors","path":"sprites/cursors/cursors.yy",},},

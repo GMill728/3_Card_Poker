@@ -43,6 +43,7 @@
     {"name":"Game","order":3,"path":"scripts/Game/Game.yy",},
     {"name":"Hand","order":1,"path":"scripts/Hand/Hand.yy",},
     {"name":"InfoBox","order":4,"path":"scripts/InfoBox/InfoBox.yy",},
+    {"name":"PokerHand","order":7,"path":"scripts/PokerHand/PokerHand.yy",},
     {"name":"SubmitBox","order":5,"path":"scripts/SubmitBox/SubmitBox.yy",},
     {"name":"TestHand","order":6,"path":"scripts/TestHand/TestHand.yy",},
     {"name":"cursors","order":9,"path":"sprites/cursors/cursors.yy",},
