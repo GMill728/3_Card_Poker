@@ -81,7 +81,7 @@ function Game() constructor{
 		
 		
 	}
-
+}
 
 
 //the next section flips cards but I don't know how that works with 3 card poker rules
