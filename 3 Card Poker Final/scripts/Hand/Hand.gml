@@ -308,6 +308,50 @@ function Hand() constructor {
 	}
 	
 
+	/// @func compareHands(dealerHand)
+	/// @desc compares player and dealear hands. 
+	///	@return {int} 1 if player hand is better, -1 if hand is worse, 0 if complete tie
+	/// Created by: Wilfred
+	function compareHands(dealerHand)
+	{
+		var playerRank = getHandRank(); 
+		var dealerRank = dealerHand.getHandRank(); 
+		
+		//compare ranks
+		if (playerRank > dealerRank)
+		{
+			return 1; 	//hand is better
+		}
+		if (playerRank < dealerRank)
+		{
+			return -1; 	//hand is worse
+		}
+		
+		//if this far, both hands have the same rank, a tie. 
+		//sort by rank to check who has the highest ranked card. 
+		sortByRank(); 
+		dealerHand.sortByRank(); 
+		
+		//compare from last card (highest) to first card (lowest) 
+		for (var i = getCardCount() - 1; i >= 0; i--)
+		{
+			var playerCardRank = getCard(i).getRank(); 	
+			var dealerCardRank = dealerHand.getCard(i).getRank(); 
+			
+			if (playerCardRank > dealerCardRank)
+			{
+				return 1;
+			}
+			if (playerCardRank < dealerCardRank)
+			{
+				return -1; 	
+			}
+		}
+		
+		//if this far, all cards must match. Complete Tie. 
+		return 0; 
+		
+	}
 	
 	
 }//end hand
