@@ -16,7 +16,7 @@ function Game() constructor{
 	//put functions to call dealer specific things here
 	
 	//shuffle deck
-	deck.shuffle
+	deck.shuffle();
 	
 	//deal hands
 	playerHand.addCard( deck.deal() );
@@ -68,7 +68,8 @@ function Game() constructor{
 	function setPlayerBet(amount) {
 		playerBet = amount;
 		playerMoney -= playerBet;
-}//end setPlayerBet
+	}//end setPlayerBet
+}
 
 
 
