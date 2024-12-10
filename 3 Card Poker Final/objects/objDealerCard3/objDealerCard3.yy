@@ -1,19 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"objContinue",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"objDealerCard3",
+  "eventList":[],
   "managed":true,
-  "name":"objContinue",
+  "name":"objDealerCard3",
   "overriddenProperties":[],
   "parent":{
-    "name":"Buttons",
-    "path":"folders/Objects/Buttons.yy",
+    "name":"Cards",
+    "path":"folders/Objects/Cards.yy",
   },
   "parentObjectId":{
-    "name":"objParentButton",
-    "path":"objects/objParentButton/objParentButton.yy",
+    "name":"objCard",
+    "path":"objects/objCard/objCard.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -33,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sprContinue",
-    "path":"sprites/sprContinue/sprContinue.yy",
+    "name":"sprDeck",
+    "path":"sprites/sprDeck/sprDeck.yy",
   },
   "spriteMaskId":null,
   "visible":true,
