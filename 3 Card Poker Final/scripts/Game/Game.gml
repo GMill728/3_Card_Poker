@@ -1,10 +1,16 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+
+
 function Game() constructor{
-	Money = 150;
-	playerBet = undefined;
+	playerMoney = 1000;		//game always starts with 1000
+	anteBet = 0; 
+	pairPlusBet = 0; 
+	playBet = 0; 
 	
 	deck = new Deck();
+	deck.shuffle(); 
+	
 	playerHand = new PokerHand();
 	dealerHand = new PokerHand();
 	
@@ -15,8 +21,6 @@ function Game() constructor{
 	
 	//put functions to call dealer specific things here
 	
-	//shuffle deck
-	deck.shuffle();
 	
 	//deal hands
 	playerHand.addCard( deck.deal() );
@@ -45,18 +49,6 @@ function Game() constructor{
 		objDealerCard2.image_index = 0;
 		objDealerCard3.image_index = 0;
 		
-		//shuffle deck
-		deck.shuffle();
-		
-		//deal hands
-		playerHand.addCard( deck.deal() );
-		playerHand.addCard( deck.deal() );
-		playerHand.addCard( deck.deal() );
-		
-		dealerHand.addCard( deck.deal() );
-		dealerHand.addCard( deck.deal() );
-		dealerHand.addCard( deck.deal() );
-		
 		//enable and disable buttons as seen fit
 	}//end redeal 
 	
@@ -69,7 +61,26 @@ function Game() constructor{
 		playerBet = amount;
 		playerMoney -= playerBet;
 	}//end setPlayerBet
-}
+
+	function dealCards() 
+	{
+		playerHand.clear(); 
+		dealerHand.clear(); 
+		
+		//reshuffle if low on cards
+		if (deck.cardsLeft() < 6)
+		{
+			deck.shuffle(); 	
+		}
+		
+		for (var i = 0; i < 3; i++)
+		{
+			playerHand.addCard(deck.deal()); 
+			dealerHand.addCard(deck.deal()); 
+		}
+		
+		
+	}
 
 
 
