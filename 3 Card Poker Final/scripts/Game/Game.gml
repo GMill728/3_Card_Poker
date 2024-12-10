@@ -39,6 +39,9 @@ function Game() constructor{
 		//clear the hands
 		playerHand.clear();
 		dealerHand.clear();
+		anteBet = 0; 
+		pairPlusBet = 0; 
+		playBet = 0; 
 		
 		//resets the cards to the card backs while dealing
 		objPlayerCard1.image_index = 0;
@@ -50,6 +53,8 @@ function Game() constructor{
 		objDealerCard3.image_index = 0;
 		
 		//enable and disable buttons as seen fit
+		togglePlays(false);
+		toggleBets(true);
 	}//end redeal 
 	
 	
@@ -110,6 +115,16 @@ function Game() constructor{
 		objPlayerCard3.image_index = playerCard3.getRank() * 4 + playerCard3.getSuit() + 1;
 		
 		toggleBets(false);
+		togglePlays(true);
+	}
+	
+	/// @func playerFold()
+	/// @desc Handles folding for easy readability.
+	// William Grant 12/10/24
+	function playerFold()
+	{
+		playerMoney += pairPlusBet;
+		redeal();
 	}
 	
 	/// @func toggleBets(toggleState)
@@ -123,6 +138,19 @@ function Game() constructor{
 		objPlayBox.enabled = toggleState;
 		objPlay.enabled = toggleState;
 	}
+	
+	/// @func togglePlays(toggleState)
+	/// @desc Toggles all the play buttons according to boolean
+	/// @param {Bool} toggleState true = enabled, false = disabled
+	// William Grant 12/10/24
+	function togglePlays(toggleState)
+	{
+		objContinue.enabled = toggleState;
+		objFold.enabled = toggleState;
+	}
+	
+	togglePlays(false);
+	toggleBets(true);
 }
 
 

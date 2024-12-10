@@ -5,3 +5,5 @@ image_speed = 0; //Static
 image_index = 0; //Unpressed
 text = "";       //If text needed
 enabled = true;  //Enabled by default
+clicked = false; //False by default
+hovered = false; //False by default

@@ -3,5 +3,5 @@
 
 if (enabled)
 {
-	image_index = 1;
+	hovered = true;
 }

@@ -3,9 +3,17 @@
 
 draw_self();
 
-if (!enabled)
+if (clicked || !enabled)
 {
 	image_index = 2;
+}
+else if (hovered)
+{
+	image_index = 1;
+}
+else if (enabled)
+{
+	image_index = 0;
 }
 
 draw_set_font(fntButton);
