@@ -243,6 +243,10 @@ function Game() constructor{
 		}//end if
 	}
 	
+	
+	/// @func calculateWinnings
+	/// @desc handles all calcaulations for payouts
+	/// Created by: Wilfred 12/10/24
 	function calculateWinnings()
 	{
 		var totalWinnings = 0;
