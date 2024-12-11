@@ -280,20 +280,6 @@ function Hand() constructor {
 		return (rank1 == rank2 || rank1 == rank3 || rank2 == rank3)
 	}
 	
-	/// @func highestCard
-	/// @desc Returns the highest card in the hand.
-	/// @return Card - The highest card in the hand.
-	// William Grant 12/10/24
-	function highestCard()
-	{
-		var highCard = hand[0];
-		for (var i = 0; i < getCardCount(); i++)
-				if (highCard.getRank() < hand[i])
-					highCard = hand[i];
-					
-		return highCard;
-	}
-	
 	/// @func getHandRank()
 	/// @desc Evaluates the rank of the hand and returns an enumerated type.
 	/// @return {enum.HAND_RANK} The rank of the hand. 

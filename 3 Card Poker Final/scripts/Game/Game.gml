@@ -223,6 +223,9 @@ function Game() constructor{
 		}
 	}
 	
+	/// @func promptPlayAgain
+	/// @desc Called to restart game or end game
+	// William Grant 12/10/24
 	function promptPlayAgain() 
 	{
 		if(show_question("You have run out of chips. Play again?")) 
@@ -235,13 +238,6 @@ function Game() constructor{
 			game_end();
 		}//end if
 	}
-	
-	
-	togglePlays(false);
-	toggleBets(true);
-	objBigBox.print("Game Start");
-	objBigBox.print("Place your bets.");
-	
 	
 	function calculateWinnings()
 	{
@@ -295,8 +291,12 @@ function Game() constructor{
 		
 		return totalWinnings; 
 	}
-}
-
+		
+	togglePlays(false);
+	toggleBets(true);
+	objBigBox.print("Game Start");
+	objBigBox.print("Place your bets.");
+	
 }
 //the next section flips cards but I don't know how that works with 3 card poker rules
 //pretty sure cards flip at the end and winnings are calculated so there is no hit and bet sections
