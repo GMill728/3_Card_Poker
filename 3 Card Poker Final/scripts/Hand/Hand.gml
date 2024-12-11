@@ -217,6 +217,7 @@ function Hand() constructor {
 	/// @function isStraight()
 	/// @desc Checks if hand is a straight
 	/// @return {boolen} True if the hand is straight, else false. 
+	/// Created by: Wilfred
 	function isStraight()
 	{
 		sortByRank(); 
@@ -241,6 +242,7 @@ function Hand() constructor {
 	/// @func isFlush()
 	/// @desc Checks if the hand is a Flush.
 	/// @return {boolean} if hand is a Flush true, else false. 
+	/// Created by: Wilfred
 	function isFlush()
 	{
 		var suit1 = hand[0].getSuit(); 
@@ -255,6 +257,7 @@ function Hand() constructor {
 	/// @func isThreeOfAKind()
 	/// @desc Checks if the hand is Three of a Kind.
 	/// @return {boolean} if hand is a Three of a Kind true, else false. 
+	/// Created by: Wilfred
 	function isThreeOfAKind()
 	{
 		var rank1 = hand[0].getRank();
@@ -267,6 +270,7 @@ function Hand() constructor {
 	/// @func isPair()
 	/// @desc Checks if the hand is a Pair.
 	/// @return {boolean} if hand is a Pair True, else false. 
+	/// Created by: Wilfred
 	function isPair()
 	{
 		var rank1 = hand[0].getRank();
@@ -278,7 +282,8 @@ function Hand() constructor {
 	
 	/// @func getHandRank()
 	/// @desc Evaluates the rank of the hand and returns an enumerated type.
-	/// @return {enum.HAND_RANK} The rank of the hand (STRAIGHT_FLUSH, THREE_OF_A_KIND, etc..).
+	/// @return {enum.HAND_RANK} The rank of the hand. 
+	/// Created by: Wilfred
 	function getHandRank()
 	{
 		enum HAND_RANK {STRAIGHT_FLUSH, THREE_OF_A_KIND, STRAIGHT, FLUSH, PAIR, HIGH_CARD}; 
@@ -306,7 +311,6 @@ function Hand() constructor {
 		
 		return HAND_RANK.HIGH_CARD; 
 	}
-	
 
 	/// @func compareHands(dealerHand)
 	/// @desc compares player and dealear hands. 
@@ -318,19 +322,20 @@ function Hand() constructor {
 		var dealerRank = dealerHand.getHandRank(); 
 		
 		//compare ranks
-		if (playerRank > dealerRank)
-		{
-			return 1; 	//hand is better
-		}
 		if (playerRank < dealerRank)
 		{
-			return -1; 	//hand is worse
+			return 1; 	//player hand is better
+		}
+		if (playerRank > dealerRank)
+		{
+			return -1; 	//delear hand is better
 		}
 		
 		//if this far, both hands have the same rank, a tie. 
 		//sort by rank to check who has the highest ranked card. 
 		sortByRank(); 
 		dealerHand.sortByRank(); 
+		
 		
 		//compare from last card (highest) to first card (lowest) 
 		for (var i = getCardCount() - 1; i >= 0; i--)
@@ -340,18 +345,19 @@ function Hand() constructor {
 			
 			if (playerCardRank > dealerCardRank)
 			{
-				return 1;
+				return 1;	//player hand is better
 			}
 			if (playerCardRank < dealerCardRank)
 			{
-				return -1; 	
+				return -1; 	//dealer hand is better
 			}
-		}
+		} 
 		
 		//if this far, all cards must match. Complete Tie. 
 		return 0; 
 		
 	}
-	
+
+
 	
 }//end hand

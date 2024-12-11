@@ -70,6 +70,7 @@
     {"id":{"name":"Hand","path":"scripts/Hand/Hand.yy",},},
     {"id":{"name":"InfoBox","path":"scripts/InfoBox/InfoBox.yy",},},
     {"id":{"name":"PokerHand","path":"scripts/PokerHand/PokerHand.yy",},},
+    {"id":{"name":"TestGetHandRank","path":"scripts/TestGetHandRank/TestGetHandRank.yy",},},
     {"id":{"name":"TestHand","path":"scripts/TestHand/TestHand.yy",},},
     {"id":{"name":"cursors","path":"sprites/cursors/cursors.yy",},},
     {"id":{"name":"sprAnte","path":"sprites/sprAnte/sprAnte.yy",},},
@@ -87,8 +88,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"TestRoom","path":"rooms/TestRoom/TestRoom.yy",},},
+    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
