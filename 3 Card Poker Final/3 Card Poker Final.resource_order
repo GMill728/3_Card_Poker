@@ -46,6 +46,7 @@
     {"name":"InfoBox","order":4,"path":"scripts/InfoBox/InfoBox.yy",},
     {"name":"PokerHand","order":7,"path":"scripts/PokerHand/PokerHand.yy",},
     {"name":"TestHand","order":6,"path":"scripts/TestHand/TestHand.yy",},
+    {"name":"Timer","order":8,"path":"scripts/Timer/Timer.yy",},
     {"name":"cursors","order":9,"path":"sprites/cursors/cursors.yy",},
     {"name":"sprAnte","order":1,"path":"sprites/sprAnte/sprAnte.yy",},
     {"name":"sprBackground","order":3,"path":"sprites/sprBackground/sprBackground.yy",},

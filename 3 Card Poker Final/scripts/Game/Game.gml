@@ -7,12 +7,16 @@ function Game() constructor{
 	anteBet = 0; 
 	pairPlusBet = 0; 
 	playBet = 0; 
+	isFolding = false;
 	
 	deck = new Deck();
 	deck.shuffle(); 
 	
 	playerHand = new PokerHand();
 	dealerHand = new PokerHand();
+	
+	#macro timerDelay 3
+	gameTimer = new Timer(timerDelay);
 	
 	
 	//there are macros that I didn't add here
@@ -55,6 +59,8 @@ function Game() constructor{
 		//enable and disable buttons as seen fit
 		togglePlays(false);
 		toggleBets(true);
+		
+		objBigBox.print("New Round\nPlace your bets.");
 	}//end redeal 
 	
 	
@@ -114,17 +120,23 @@ function Game() constructor{
 		objPlayerCard2.image_index = playerCard2.getRank() * 4 + playerCard2.getSuit() + 1;
 		objPlayerCard3.image_index = playerCard3.getRank() * 4 + playerCard3.getSuit() + 1;
 		
+		objBigBox.print("Player antes " + string(anteBet) + " and");
+		objBigBox.print("Player bets " + string(pairPlusBet) + " on a pair or higher.");
 		toggleBets(false);
 		togglePlays(true);
 	}
 	
 	/// @func playerFold()
-	/// @desc Handles folding for easy readability.
+	/// @desc Handles folding for easy readability. Actually turned out to be more useful.
 	// William Grant 12/10/24
 	function playerFold()
 	{
 		playerMoney += pairPlusBet;
-		redeal();
+		objBigBox.print("Player folds and gets back");
+		objBigBox.print(string(pairPlusBet) + " chips from Pair Plus bet.");
+		togglePlays(false);
+		isFolding = true;
+		gameTimer.start();
 	}
 	
 	/// @func toggleBets(toggleState)
@@ -149,8 +161,22 @@ function Game() constructor{
 		objFold.enabled = toggleState;
 	}
 	
+	function checkTimer()
+	{
+		if (gameTimer.isFinished() && isFolding)
+		{
+			redeal();
+		}
+		else
+		{
+			gameTimer.tick();	
+		}
+	}
+	
 	togglePlays(false);
 	toggleBets(true);
+	objBigBox.print("Game Start");
+	objBigBox.print("Place your bets.");
 }
 
 

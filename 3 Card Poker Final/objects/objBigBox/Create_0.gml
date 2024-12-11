@@ -1,7 +1,7 @@
 /// @description Declares and initalizes attributes for objBigBox, a console
 // You can write your code in this editor
 
-messageList = array_create(1,"");				//Expandable if desired
+messageList = array_create(2,"");				//Expandable if desired
 currIdx = 0;
 
 /// @func print(msg)
