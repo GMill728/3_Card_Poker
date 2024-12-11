@@ -21,6 +21,7 @@
   "height":44,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"1af57c53-d231-46d1-a7c5-2a40a5505c69","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"1af57c53-d231-46d1-a7c5-2a40a5505c69","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"ed7bd9ae-cf4e-48de-91fc-968f6931ebdf","blendMode":0,"displayName":"default","isLocked":false,"name":"ed7bd9ae-cf4e-48de-91fc-968f6931ebdf","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"sprFold",
