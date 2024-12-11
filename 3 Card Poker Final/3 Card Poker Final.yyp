@@ -72,6 +72,7 @@
     {"id":{"name":"PokerHand","path":"scripts/PokerHand/PokerHand.yy",},},
     {"id":{"name":"TestGetHandRank","path":"scripts/TestGetHandRank/TestGetHandRank.yy",},},
     {"id":{"name":"TestHand","path":"scripts/TestHand/TestHand.yy",},},
+    {"id":{"name":"Timer","path":"scripts/Timer/Timer.yy",},},
     {"id":{"name":"cursors","path":"sprites/cursors/cursors.yy",},},
     {"id":{"name":"sprAnte","path":"sprites/sprAnte/sprAnte.yy",},},
     {"id":{"name":"sprBackground","path":"sprites/sprBackground/sprBackground.yy",},},

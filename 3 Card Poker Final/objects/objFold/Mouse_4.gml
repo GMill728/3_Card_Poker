@@ -4,4 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-objBigBox.print("Goodbye.");
+if (enabled)
+{
+	global.game.playerFold();
+}
