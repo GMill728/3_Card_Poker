@@ -4,4 +4,5 @@
 // Inherit the parent event
 event_inherited();
 
-objBigBox.print("Hello.");
+global.game.setPlayBet(real(objPlayBox.text));
+global.game.playerContinue();

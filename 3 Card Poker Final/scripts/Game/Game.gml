@@ -7,7 +7,8 @@ function Game() constructor{
 	anteBet = 0; 
 	pairPlusBet = 0; 
 	playBet = 0; 
-	isFolding = false;
+	newRound = false;
+	isDealerTurn = false;
 	
 	deck = new Deck();
 	deck.shuffle(); 
@@ -46,6 +47,8 @@ function Game() constructor{
 		anteBet = 0; 
 		pairPlusBet = 0; 
 		playBet = 0; 
+		newRound = false;
+		isDealerTurn = false;
 		
 		//resets the cards to the card backs while dealing
 		objPlayerCard1.image_index = 0;
@@ -60,7 +63,8 @@ function Game() constructor{
 		togglePlays(false);
 		toggleBets(true);
 		
-		objBigBox.print("New Round\nPlace your bets.");
+		objBigBox.print("New Round");
+		objBigBox.print("Place your bets.");
 	}//end redeal 
 	
 	
@@ -135,7 +139,49 @@ function Game() constructor{
 		objBigBox.print("Player folds and gets back");
 		objBigBox.print(string(pairPlusBet) + " chips from Pair Plus bet.");
 		togglePlays(false);
-		isFolding = true;
+		newRound = true;
+		gameTimer.start();
+	}
+	
+	function playerContinue()
+	{
+		objBigBox.print("Playing for " + string(playBet) + " chips.")
+		objBigBox.print("Dealer turn.");
+		togglePlays(false);
+		isDealerTurn = true;
+		gameTimer.start();
+	}
+	
+	function dealerFlip()
+	{
+		isDealerTurn = false;
+		dealerCard1 = playerHand.getCard(0);
+		dealerCard2 = playerHand.getCard(1);
+		dealerCard3 = playerHand.getCard(2);
+		objDealerCard1.image_index = dealerCard1.getRank() * 4 + dealerCard1.getSuit() + 1;
+		objDealerCard2.image_index = dealerCard2.getRank() * 4 + dealerCard2.getSuit() + 1;
+		objDealerCard3.image_index = dealerCard3.getRank() * 4 + dealerCard3.getSuit() + 1;
+		
+		if (dealerHand.getHandRank() == HAND_RANK.HIGH_CARD && dealerHand.highestCard().getRank() < RANK.QUEEN)
+		{
+			objBigBox.print("Dealer is not qualified.")
+			objBigBox.print("Player wins " + string(anteBet*2) + " chips.")
+			playerMoney += anteBet*2;
+		} 
+		else if (playerHand.compareHands(dealerHand) == -1)
+		{
+			
+		}
+		else
+		{
+			
+		}
+		
+		if (playerMoney <= 0) {
+			objDealer.alarm[0] = game_get_speed(gamespeed_fps);
+		}
+		
+		newRound = true;
 		gameTimer.start();
 	}
 	
@@ -161,17 +207,38 @@ function Game() constructor{
 		objFold.enabled = toggleState;
 	}
 	
+	/// @func gameTimer
+	/// @desc Timer for folding, dealer turn, and maybe other stuff.
+	// William Grant 12/10/24
 	function checkTimer()
 	{
-		if (gameTimer.isFinished() && isFolding)
+		if (gameTimer.isFinished() && newRound)
 		{
 			redeal();
+		}
+		else if (gameTimer.isFinished() && isDealerTurn)
+		{
+			dealerFlip();
 		}
 		else
 		{
 			gameTimer.tick();	
 		}
 	}
+	
+	function promptPlayAgain() 
+	{
+		if(show_question("You have run out of chips. Play again?")) 
+		{
+			playerChips = 1000;
+			redeal();
+		} 
+		else 
+		{
+			game_end();
+		}//end if
+		
+	
 	
 	togglePlays(false);
 	toggleBets(true);
