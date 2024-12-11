@@ -116,6 +116,10 @@ function Game() constructor{
 			playerHand.addCard(deck.deal());
 			dealerHand.addCard(deck.deal()); 
 		}
+		
+		playerHand.sortByRank();
+		dealerHand.sortByRank();
+		
 		playerCard1 = playerHand.getCard(0);
 		playerCard2 = playerHand.getCard(1);
 		playerCard3 = playerHand.getCard(2);
@@ -143,6 +147,9 @@ function Game() constructor{
 		gameTimer.start();
 	}
 	
+	/// @func playerContinue()
+	/// @desc Handles pressing the continue button. Mostly for delay.
+	// William Grant 12/10/24
 	function playerContinue()
 	{
 		objBigBox.print("Playing for " + string(playBet) + " chips.")
@@ -152,30 +159,20 @@ function Game() constructor{
 		gameTimer.start();
 	}
 	
+	/// @func dealerFlip()
+	/// @desc Handles flipping cards and leading to calcualteWinnings(). Also checks if losing.
+	// William Grant 12/10/24
 	function dealerFlip()
 	{
 		isDealerTurn = false;
-		dealerCard1 = playerHand.getCard(0);
-		dealerCard2 = playerHand.getCard(1);
-		dealerCard3 = playerHand.getCard(2);
+		dealerCard1 = dealerHand.getCard(0);
+		dealerCard2 = dealerHand.getCard(1);
+		dealerCard3 = dealerHand.getCard(2);
 		objDealerCard1.image_index = dealerCard1.getRank() * 4 + dealerCard1.getSuit() + 1;
 		objDealerCard2.image_index = dealerCard2.getRank() * 4 + dealerCard2.getSuit() + 1;
 		objDealerCard3.image_index = dealerCard3.getRank() * 4 + dealerCard3.getSuit() + 1;
 		
-		if (dealerHand.getHandRank() == HAND_RANK.HIGH_CARD && dealerHand.highestCard().getRank() < RANK.QUEEN)
-		{
-			objBigBox.print("Dealer is not qualified.")
-			objBigBox.print("Player wins " + string(anteBet*2) + " chips.")
-			playerMoney += anteBet*2;
-		} 
-		else if (playerHand.compareHands(dealerHand) == -1)
-		{
-			
-		}
-		else
-		{
-			
-		}
+		playerMoney += calculateWinnings()
 		
 		if (playerMoney <= 0) {
 			objDealer.alarm[0] = game_get_speed(gamespeed_fps);
@@ -230,14 +227,14 @@ function Game() constructor{
 	{
 		if(show_question("You have run out of chips. Play again?")) 
 		{
-			playerChips = 1000;
+			playerMoney = 1000;
 			redeal();
 		} 
 		else 
 		{
 			game_end();
 		}//end if
-		
+	}
 	
 	
 	togglePlays(false);
@@ -246,10 +243,9 @@ function Game() constructor{
 	objBigBox.print("Place your bets.");
 	
 	
-	function calculateWinnings(playerHand, dealerHand, anteBet, pairPlusBet)
+	function calculateWinnings()
 	{
-		var totalWinnings = 0; 
-		var playBet = anteBet; 
+		var totalWinnings = 0;
 		
 		//check if dealer "qualifies"
 		var dealerQualifies = (dealerHand.getCard(2).getRank() >= RANK.QUEEN); 
@@ -259,19 +255,20 @@ function Game() constructor{
 			//compare hands, 1 if player wins, -1 if dealer wins
 			var result = playerHand.compareHands(dealerHand); 
 			
-			if (result == 1) //if player wins
+			if (result >= 0) //if player wins or ties
 			{
-				totalWinnings += anteBet + playBet; 	
+				totalWinnings += anteBet*2 + playBet*2;
+				objBigBox.print("Player wins this hand.");
 			}
-			else if (result == -1)
+			else
 			{
-				totalWinnings -= anteBet + playBet; 
+				objBigBox.print("Dealer wins this hand.");
 			}
-			//if result == 0, no change needed since it is a tie. 
 		}
 		else //if the dealer does not qualify
 		{
-			totalWinnings += anteBet; //get antebet back
+			totalWinnings += anteBet*2; //get antebet back
+			objBigBox.print("Dealer does not qualify.");
 		}
 		
 		//calculate ante bonus
@@ -284,8 +281,17 @@ function Game() constructor{
 		}
 		
 		//calculate pair plus 
-		var pairPlusMult = [40, 30, 6, 4, 1, 0]; //multipliers
-		totalWinnings += pairPlusBet * pairPlusMult[playerRank]; 
+		var pairPlusMult = [41, 31, 7, 5, 2, 0]; //multipliers
+		totalWinnings += pairPlusBet * pairPlusMult[playerRank];
+		
+		if (totalWinnings > 0)
+		{
+			objBigBox.print("Player wins a total of " + string(totalWinnings) + " chips.");
+		}
+		else
+		{
+			objBigBox.print("Player doesn't gain any chips.");
+		}
 		
 		return totalWinnings; 
 	}

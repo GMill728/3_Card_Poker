@@ -3,6 +3,8 @@
 
 // Inherit the parent event
 event_inherited();
-
-global.game.setPlayBet(real(objPlayBox.text));
-global.game.playerContinue();
+if (enabled)
+{
+	global.game.setPlayBet(real(objPlayBox.text));
+	global.game.playerContinue();
+}

@@ -11,11 +11,13 @@ if (enabled)
 	
 	if (anteBet <= 0 && pairPlusBet <= 0)										//If both are 0
 	{
-		objBigBox.print("Invalid bet, must be greater than 0.");
+		objBigBox.print("Invalid bet.");
+		objBigBox.print("Must be greater than 0.");
 	}
-	else if (anteBet + pairPlusBet*2 > global.game.getPlayerMoney())			//If more money than can bet and play
+	else if (anteBet*2 + pairPlusBet > global.game.getPlayerMoney())			//If more money than can bet and play
 	{
-		objBigBox.print("You do not have enough money to place these bets.");
+		objBigBox.print("You do not have enough money");
+		objBigBox.print("to place these bets.");
 	}
 	else																		//Set bets and deal cards
 	{
