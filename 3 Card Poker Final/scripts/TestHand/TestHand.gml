@@ -50,4 +50,85 @@ function TestHand() {
 	show_debug_message("Hand Rank: " + string(hand5.getHandRank()));
 
     //yall can add more edge cases if you want
+	
+	//create Hand instances for player and dealer
+    var playerHand = new Hand();
+    var dealerHand = new Hand();
+
+    // Test Case 1: Player has a better hand rank
+    playerHand.addCard(new Card(RANK.ACE, SUIT.SPADES));
+    playerHand.addCard(new Card(RANK.KING, SUIT.SPADES));
+    playerHand.addCard(new Card(RANK.QUEEN, SUIT.SPADES)); // Straight Flush
+    
+    dealerHand.addCard(new Card(RANK.KING, SUIT.HEARTS));
+    dealerHand.addCard(new Card(RANK.KING, SUIT.CLUBS));
+    dealerHand.addCard(new Card(RANK.KING, SUIT.DIAMONDS)); // Three of a Kind
+    
+    var result = playerHand.compareHands(dealerHand);
+    show_debug_message("Test Case 1: Player has a better hand rank. Result: " + string(result)); // Expected: 1
+    
+    // Reset hands
+    playerHand.clear();
+    dealerHand.clear();
+
+    // Test Case 2: Dealer has a better hand rank
+    playerHand.addCard(new Card(RANK.THREE, SUIT.SPADES));
+    playerHand.addCard(new Card(RANK.FOUR, SUIT.HEARTS));
+    playerHand.addCard(new Card(RANK.FIVE, SUIT.CLUBS)); // Straight
+    
+    dealerHand.addCard(new Card(RANK.FIVE, SUIT.SPADES));
+    dealerHand.addCard(new Card(RANK.FIVE, SUIT.HEARTS));
+    dealerHand.addCard(new Card(RANK.FIVE, SUIT.CLUBS)); // Three of a Kind
+    
+    result = playerHand.compareHands(dealerHand);
+    show_debug_message("Test Case 2: Dealer has a better hand rank. Result: " + string(result)); // Expected: -1
+    
+    // Reset hands
+    playerHand.clear();
+    dealerHand.clear();
+
+    // Test Case 3: Tie in hand rank, player wins with high card
+    playerHand.addCard(new Card(RANK.ACE, SUIT.SPADES));
+    playerHand.addCard(new Card(RANK.QUEEN, SUIT.HEARTS));
+    playerHand.addCard(new Card(RANK.JACK, SUIT.CLUBS)); // High Card
+    
+    dealerHand.addCard(new Card(RANK.KING, SUIT.SPADES));
+    dealerHand.addCard(new Card(RANK.QUEEN, SUIT.CLUBS));
+    dealerHand.addCard(new Card(RANK.JACK, SUIT.DIAMONDS)); // High Card
+    
+    result = playerHand.compareHands(dealerHand);
+    show_debug_message("Test Case 3: Tie in hand rank, player wins with high card. Result: " + string(result)); // Expected: 1
+    
+    // Reset hands
+    playerHand.clear();
+    dealerHand.clear();
+
+    // Test Case 4: Tie in hand rank, dealer wins with high card
+    playerHand.addCard(new Card(RANK.TEN, SUIT.SPADES));
+    playerHand.addCard(new Card(RANK.NINE, SUIT.HEARTS));
+    playerHand.addCard(new Card(RANK.EIGHT, SUIT.CLUBS)); // High Card
+    
+    dealerHand.addCard(new Card(RANK.JACK, SUIT.SPADES));
+    dealerHand.addCard(new Card(RANK.NINE, SUIT.CLUBS));
+    dealerHand.addCard(new Card(RANK.EIGHT, SUIT.DIAMONDS)); // High Card
+    
+    result = playerHand.compareHands(dealerHand);
+    show_debug_message("Test Case 4: Tie in hand rank, dealer wins with high card. Result: " + string(result)); // Expected: -1
+    
+    // Reset hands
+    playerHand.clear();
+    dealerHand.clear();
+
+    // Test Case 5: Complete tie
+    playerHand.addCard(new Card(RANK.FIVE, SUIT.SPADES));
+    playerHand.addCard(new Card(RANK.SIX, SUIT.HEARTS));
+    playerHand.addCard(new Card(RANK.SEVEN, SUIT.CLUBS)); // High Card
+    
+    dealerHand.addCard(new Card(RANK.FIVE, SUIT.CLUBS));
+    dealerHand.addCard(new Card(RANK.SIX, SUIT.DIAMONDS));
+    dealerHand.addCard(new Card(RANK.SEVEN, SUIT.HEARTS)); // High Card
+    
+    result = playerHand.compareHands(dealerHand);
+    show_debug_message("Test Case 5: Complete tie. Result: " + string(result)); // Expected: 0
+
 }
