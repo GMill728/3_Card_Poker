@@ -1,5 +1,7 @@
 /// @description Declares and initalizes attributes for objBigBox, a console
 // You can write your code in this editor
+//assets edited by Gavin Mills
+//written by William, edited by Gavin
 
 messageList = array_create(2,"");				//Expandable if desired
 currIdx = 0;

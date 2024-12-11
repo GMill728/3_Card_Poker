@@ -1,6 +1,6 @@
 /// @description Handles drawing text
 //by William Grant 12/7/2024
-
+//assets edited by Gavin Mills
 draw_self();				//Draw text box
 
 draw_set_font(fntButton); 

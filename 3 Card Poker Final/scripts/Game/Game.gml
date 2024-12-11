@@ -1,51 +1,45 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-/// @author Wilhelm, Gavin Mills, William, and Griffen Nye
-/// Date Created: 11/9/24
-/// Date Modified: 11/9/24
-/// Dependencies: Struct.Card
+/// @author Gavin Mills, influenced by design by Dr. Griffen Nye
+/// Date Created: 12/9/24
+/// Date Modified: 12/10/24 by Wilhelm, and William grant
+/// Dependencies: PokerHand()
 //credit to all ui sprites to BUCH from https://opengameart.org/users/buch
 
 function Game() constructor{
 	playerMoney = 1000;		//game always starts with 1000
-	anteBet = 0; 
+	anteBet = 0;           //initializing starting states of all variables
 	pairPlusBet = 0; 
 	playBet = 0; 
 	newRound = false;
 	isDealerTurn = false;
 	
-	deck = new Deck();
+	deck = new Deck(); //create a new instance of the deck struct and randomize the order of the cards
 	deck.shuffle(); 
 	
-	playerHand = new PokerHand();
+	playerHand = new PokerHand(); //deals a new hand to player and dealer by creating 2 PokerHand instances
 	dealerHand = new PokerHand();
 	
 	#macro timerDelay 3
 	gameTimer = new Timer(timerDelay);
 	
 	
-	//there are macros that I didn't add here
-	
-	//do I need to specify last player card and last dealer card???
-	
-	//put functions to call dealer specific things here
-	
-	
-	//deal hands
+	//deal hands to player
 	playerHand.addCard( deck.deal() );
 	playerHand.addCard( deck.deal() );
 	playerHand.addCard( deck.deal() );
 	
+	//deal hands to dealer
 	dealerHand.addCard( deck.deal() );
 	dealerHand.addCard( deck.deal() );
 	dealerHand.addCard( deck.deal() );
-	
-	//I think here you would call the enabling of the continue and fold buttons
-	
+
+	/// @func redeal()
+	/// @desc function responsible for clearing the hands after the turn
+	// Gavin Mills 12/09/24
 	function redeal() {
-		//here in black jack he deletes added cards but we don't have to worry about that
 		
-		//clear the hands
+		//clear the hands (reset variables to default values)
 		playerHand.clear();
 		dealerHand.clear();
 		anteBet = 0; 
@@ -67,11 +61,14 @@ function Game() constructor{
 		togglePlays(false);
 		toggleBets(true);
 		
+		//instruct player with text in the text box
 		objBigBox.print("New Round");
 		objBigBox.print("Place your bets.");
 	}//end redeal 
 	
-	
+	/// @func getPlayerMoney
+	/// @desc returns how much the player has in chips
+	// Gavin Mills 12/10/24
 	function getPlayerMoney() {
 		return playerMoney; 
 	}//end getPlayerMoney
@@ -104,8 +101,15 @@ function Game() constructor{
 		playerMoney -= playBet;
 	}//end setPlayerBet
 
+
+	/// @func dealCards()
+	/// @desc deals cards to player and dealer.
+	/// @desc dnoe by clearing hand, then shuffling and dealing
+	// Gavin Mills 12/07/24
 	function dealCards() 
 	{
+		
+		//clear hands
 		playerHand.clear(); 
 		dealerHand.clear(); 
 		
@@ -121,17 +125,21 @@ function Game() constructor{
 			dealerHand.addCard(deck.deal()); 
 		}
 		
+		//sorts cards
 		playerHand.sortByRank();
 		dealerHand.sortByRank();
 		
+		//deals 3 cards to player
 		playerCard1 = playerHand.getCard(0);
 		playerCard2 = playerHand.getCard(1);
 		playerCard3 = playerHand.getCard(2);
 		
+		//sets the correct image for each card value (for each card)
 		objPlayerCard1.image_index = playerCard1.getRank() * 4 + playerCard1.getSuit() + 1;
 		objPlayerCard2.image_index = playerCard2.getRank() * 4 + playerCard2.getSuit() + 1;
 		objPlayerCard3.image_index = playerCard3.getRank() * 4 + playerCard3.getSuit() + 1;
 		
+		//displays how much was bet on what in text box
 		objBigBox.print("Player antes " + string(anteBet) + " and");
 		objBigBox.print("Player bets " + string(pairPlusBet) + " on a pair or higher.");
 		toggleBets(false);

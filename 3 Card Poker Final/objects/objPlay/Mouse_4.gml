@@ -1,5 +1,6 @@
 /// @description Set bets and deal the cards, getting ready to continue or fold.
 // William Grant 12/10/24
+//assets edited by Gavin Mills
 
 // Inherit the parent event
 event_inherited();
