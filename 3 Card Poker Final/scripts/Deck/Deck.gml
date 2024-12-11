@@ -3,6 +3,7 @@
 /// Date Created: 11/9/24
 /// Date Modified: 11/9/24
 /// Dependencies: Struct.Card
+//credit to all ui sprites to BUCH from https://opengameart.org/users/buch
 
 /// @file Deck()
 /// @desc Constructs a standard deck of playing cards.

@@ -1,6 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 /// @file Structure for representing a card in a standard deck of playing cards.
+
+//credit to all ui sprites to BUCH from https://opengameart.org/users/buch
 /// @author Griffin Nye
 /// Date Created: 5/29/24
 /// Date Modified: 11/2/24

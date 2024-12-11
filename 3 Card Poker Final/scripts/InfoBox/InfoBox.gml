@@ -5,6 +5,8 @@
 /// Date Created: 12/4/24
 /// Date Modified: 12/4/24
 /// Dependencies: n/a
+//credit to all ui sprites to BUCH from https://opengameart.org/users/buch
+
 
 /// @func InfoBox(_x,_y)
 /// @desc Constructs an instance of InfoBox with the location of the box at _x, _y.
