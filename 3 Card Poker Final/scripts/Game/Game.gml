@@ -1,7 +1,10 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+/// @author Wilhelm, Gavin Mills, William, and Griffen Nye
+/// Date Created: 11/9/24
+/// Date Modified: 11/9/24
+/// Dependencies: Struct.Card
 //credit to all ui sprites to BUCH from https://opengameart.org/users/buch
-
 
 function Game() constructor{
 	playerMoney = 1000;		//game always starts with 1000

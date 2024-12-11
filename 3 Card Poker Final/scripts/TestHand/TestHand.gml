@@ -1,3 +1,9 @@
+/// @author Wilhelm
+/// Date Created: 12/8/24
+/// Date Modified: 12/10/24
+
+/// @file Timer(sec)
+/// @desc is a test of different types of hands and is not used in the final game, as it is only used for debugging
 function TestHand() {
     //straight flush
     var hand1 = new Hand();

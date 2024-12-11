@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"TestGetHandRank",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Depricated",
+    "path":"folders/Scripts/Depricated.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

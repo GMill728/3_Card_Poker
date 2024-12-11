@@ -1,3 +1,10 @@
+/// @author Wilhelm
+/// Date Created: 12/8/24
+/// Date Modified: 12/10/24
+
+/// @file Timer(sec)
+/// @desc is a test of different hand's ranks compared to eachother and is not used in the final game, as it is only used for debugging
+
 function testGetHandRank()
 {
     var hand1 = new Hand(); 

@@ -1,3 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description enable/disable flashing
+image_speed = 0; //Static
+image_index = 0; //Unpressed
 text = "";
