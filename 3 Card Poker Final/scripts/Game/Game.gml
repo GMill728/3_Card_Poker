@@ -177,6 +177,51 @@ function Game() constructor{
 	toggleBets(true);
 	objBigBox.print("Game Start");
 	objBigBox.print("Place your bets.");
+	
+	
+	function calculateWinnings(playerHand, dealerHand, anteBet, pairPlusBet)
+	{
+		var totalWinnings = 0; 
+		var playBet = anteBet; 
+		
+		//check if dealer "qualifies"
+		var dealerQualifies = (dealerHand.getCard(2).getRank() >= RANK.QUEEN); 
+		
+		if (dealerQualifies)
+		{
+			//compare hands, 1 if player wins, -1 if dealer wins
+			var result = playerHand.compareHands(dealerHand); 
+			
+			if (result == 1) //if player wins
+			{
+				totalWinnings += anteBet + playBet; 	
+			}
+			else if (result == -1)
+			{
+				totalWinnings -= anteBet + playBet; 
+			}
+			//if result == 0, no change needed since it is a tie. 
+		}
+		else //if the dealer does not qualify
+		{
+			totalWinnings += anteBet; //get antebet back
+		}
+		
+		//calculate ante bonus
+		var playerRank = playerHand.getHandRank(); 
+		
+		if (playerRank <= HAND_RANK.STRAIGHT)	//only for straight or better
+		{
+			var anteBonus = [5, 4, 1];	//5x for Straight flush, 4x Three of a kind, 1x Straight
+			totalWinnings += anteBet * anteBonus[playerRank]; 
+		}
+		
+		//calculate pair plus 
+		var pairPlusMult = [40, 30, 6, 4, 1, 0]; //multipliers
+		totalWinnings += pairPlusBet * pairPlusMult[playerRank]; 
+		
+		return totalWinnings; 
+	}
 }
 
 
